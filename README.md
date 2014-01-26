@@ -2,6 +2,7 @@ wiki2conf
 =========
 
 Convert tox wiki page to configuration file
+dependencies - docopt, get with pip install docopt
 ```
 Usage:
   wiki2conf.py <infile> <outfile> [--mahomet] [--ipv6] [--skipmaintainer <name>]

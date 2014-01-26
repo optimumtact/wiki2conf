@@ -39,7 +39,7 @@ with open(args['<infile>'], 'r') as my_file:
 
 #if mahomet specified, add mahomet
 if args['--mahomet']:
-	values['mahomet'] = ['54.194.92.175', 'NONE', '33445', '19D6BEACB8DBC1FFC39A9AFEEDD5A1ABF73F60FBFC30F397E03A87C71220620C', 'mahomet', 'Unknown', 'WORK']
+	values['mahomet'] = ['54.194.92.175', 'NONE', '33445', '19D6BEACB8DBC1FFC39A9AFEEDD5A1ABF73F60FBFC30F397E03A87C71220620C', 'mahomet', 'WEST EU', 'WORK']
 
 #now write conf format
 with open(args['<outfile>'], 'w') as f:

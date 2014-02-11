@@ -1,7 +1,12 @@
 #!/usr/bin/python
 import sys
 import re
+import json
 from docopt import docopt
+#write in json format
+def write_json(args, values):
+    with open(args['<outfile>'], 'w') as f:
+        f.write(json.dumps(values))
 
 #Write in config format values
 def write_conf(args, values):
@@ -24,7 +29,6 @@ def write_conf(args, values):
             else:
                 f.write('},\n')
             count+=1
-    f.close()
 
 #Write in html format
 def write_html(args, value):
@@ -49,12 +53,11 @@ def write_html(args, value):
                 f.write('},</br>\n')
             count+=1
         f.write('</html>\n')
-    f.close()
 
 
 strargs ='''
 Usage:
-  wiki2conf.py <infile> <outfile> [--mahomet --ipv6 --html --skipmaintainer <name>]
+  wiki2conf.py <infile> <outfile> [--output <out> --mahomet --ipv6 --skipmaintainer <name>]
   wiki2conf.py -h | --help
   wiki2conf.py --version
 
@@ -62,7 +65,7 @@ Options:
   -m --mahomet  Include mahomets server
   -i --ipv6  Include ipdbv6
   -h --help  Show this screen
-  -w --html  Output as html format
+  -o <out> --output <out>  Output type, either json, html or conf [default: conf].
   -s <name> --skipmaintainer <name>  Ignore server with maintainer name
   --version  show the version number
 '''
@@ -91,9 +94,11 @@ with open(args['<infile>'], 'r') as my_file:
 #if mahomet specified, add mahomet
 if args['--mahomet']:
     values['mahomet'] = ['54.194.92.175', 'NONE', '33445', '19D6BEACB8DBC1FFC39A9AFEEDD5A1ABF73F60FBFC30F397E03A87C71220620C', 'mahomet', 'WEST EU', 'WORK']
-if args['--html']:
+if args['--output'] == 'json':
+    write_json(args, values)
+elif args['--output'] == 'html':
     write_html(args, values)
-else:
+elif args['--output'] == 'conf':
     write_conf(args, values)
-
-my_file.close()
+else:
+    print('Please choose a valid output from [json html conf]')

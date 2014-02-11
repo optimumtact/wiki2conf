@@ -19,5 +19,9 @@ Options:
   --version  show the version number
 ```
 Suggested usage
-```wget wiki.tox.im/Servers && ./wiki2conf.py Servers server.conf -o conf -m -s <yourmaintainername>```
+```
+   wget wiki.tox.im/Servers
+   cat Servers and verify it looks good
+   ./wiki2conf.py Servers server.conf -o conf -m -s <yourmaintainername>
+```
 

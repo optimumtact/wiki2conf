@@ -21,10 +21,11 @@ def write_conf(args, values):
             if args['--ipv6'] and curr[1] != 'NONE':
                 f.write('    address = "'+curr[1]+'"\n')
             else:
-	            f.write('    address = "'+curr[0]+'"\n')
+	       f.write('    address = "'+curr[0]+'"\n')
 
-	        f.write('    port = '+curr[2]+'\n')
-	        f.write('    public_key = "'+curr[3]+'"\n')
+	    f.write('    port = '+curr[2]+'\n')
+	    f.write('    public_key = "'+curr[3]+'"\n')
+
             if count == len(values):
                 f.write('}\n')
             else:

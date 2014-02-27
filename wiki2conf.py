@@ -21,7 +21,8 @@ def write_conf(args, values):
             if args['--ipv6'] and curr[1] != 'NONE':
                 f.write('    address = "'+curr[1]+'"\n')
             else:
-	        f.write('    address = "'+curr[0]+'"\n')
+	            f.write('    address = "'+curr[0]+'"\n')
+
 	        f.write('    port = '+curr[2]+'\n')
 	        f.write('    public_key = "'+curr[3]+'"\n')
             if count == len(values):
@@ -45,8 +46,9 @@ def write_html(args, value):
                 f.write('    address = "'+curr[1]+'"</br>\n')
             else:
                 f.write('    address = "'+curr[0]+'"</br>\n')
-                f.write('    port = '+curr[2]+'</br>\n')
-                f.write('    public_key = "'+curr[3]+'"</br>\n')
+
+            f.write('    port = '+curr[2]+'</br>\n')
+            f.write('    public_key = "'+curr[3]+'"</br>\n')
             if count == len(values):
                 f.write('}</br>\n')
             else:

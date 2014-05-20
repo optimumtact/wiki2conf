@@ -25,3 +25,17 @@ Suggested usage
    ./wiki2conf.py Servers server.conf -o conf -m -s <yourmaintainername>
 ```
 
+Example output
+http://www.xeon.pw/~tox/
+
+You can easily write a simple script to update them and put it in a crontab
+```
+root@honk:/home/tox cat update.sh 
+wget wiki.tox.im/Servers
+
+/home/tox/wiki2conf/wiki2conf.py Servers /home/tox/public_html/servers.conf  -i -o conf
+/home/tox/wiki2conf/wiki2conf.py Servers /home/tox/public_html/servers.html  -i -o html
+/home/tox/wiki2conf/wiki2conf.py Servers /home/tox/public_html/servers.json  -i -o json
+
+rm Servers
+```

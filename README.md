@@ -1,7 +1,7 @@
 wiki2conf
 =========
 
-Convert tox wiki page to configuration file, json or html output
+Convert tox wiki page to configuration file, json or html output, deprecated with the move to the new tox.chat domain
 
 dependencies - docopt, get with pip install docopt
 ```
@@ -25,8 +25,6 @@ Suggested usage
    ./wiki2conf.py Servers server.conf -o conf -m -s <yourmaintainername>
 ```
 
-Example output
-http://www.xeon.pw/~tox/
 
 You can easily write a simple script to update them and put it in a crontab
 ```
